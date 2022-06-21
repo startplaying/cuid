@@ -31,7 +31,9 @@ function safeCounter () {
   return c - 1;
 }
 
-function cuid (date = new Date()) {
+function cuid (date) {
+  if (date === undefined) date = new Date();
+
   // Starting with a lowercase letter makes
   // it HTML element ID friendly.
   var letter = 'c', // hard-coded allows for sequential access
