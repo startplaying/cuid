@@ -39,7 +39,7 @@ function cuid (date) {
     // timestamp
     // warning: this exposes the exact date and time
     // that the uid was created.
-    timestamp = (date.getTime()).toString(base),
+    timestamp = (date ? date.getTime() : new Date().getTime()).toString(base),
 
     // Prevent same-machine collisions.
     counter = pad(safeCounter().toString(base), blockSize),
