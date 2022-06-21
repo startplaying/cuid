@@ -31,7 +31,7 @@ function safeCounter () {
   return c - 1;
 }
 
-function cuid (date) {
+function cuid (date = new Date()) {
   // Starting with a lowercase letter makes
   // it HTML element ID friendly.
   var letter = 'c', // hard-coded allows for sequential access
@@ -39,7 +39,7 @@ function cuid (date) {
     // timestamp
     // warning: this exposes the exact date and time
     // that the uid was created.
-    timestamp = (date ? date.getTime() : new Date().getTime()).toString(base),
+    timestamp = (date.getTime()).toString(base),
 
     // Prevent same-machine collisions.
     counter = pad(safeCounter().toString(base), blockSize),
