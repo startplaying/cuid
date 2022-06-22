@@ -2,7 +2,7 @@
  * Create a unique collision-resistant ID.
  * Read more about cuid here - https://github.com/ericelliott/cuid
  */
-declare const cuid: (() => string) & {
+declare const cuid: ((date?: Date) => string) & {
   /**
    * Create a shorter unique collision-resistant ID. Is 7 to 10 characters in length.
    */
